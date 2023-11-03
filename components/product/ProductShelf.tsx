@@ -38,7 +38,7 @@ function ProductShelf({
   }
 
   return (
-    <div class="w-full container  py-8 flex flex-col gap-12 lg:gap-16 lg:py-10">
+    <div class="w-full container  md:px-16 md:py-40">
       <Header
         title={title || ""}
         description={description || ""}
@@ -66,19 +66,6 @@ function ProductShelf({
           ))}
         </Slider>
 
-        <>
-          <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
-            <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
-              <Icon size={24} id="ChevronLeft" strokeWidth={3} />
-            </Slider.PrevButton>
-          </div>
-          <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
-            <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
-              <Icon size={24} id="ChevronRight" strokeWidth={3} />
-            </Slider.NextButton>
-          </div>
-        </>
-        <SliderJS rootId={id} />
         <SendEventOnLoad
           event={{
             name: "view_item_list",
@@ -87,7 +74,7 @@ function ProductShelf({
               items: products.map((product) =>
                 mapProductToAnalyticsItem({
                   product,
-                  ...(useOffer(product.offers)),
+                  ...useOffer(product.offers),
                 })
               ),
             },
