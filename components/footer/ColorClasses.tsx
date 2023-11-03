@@ -10,7 +10,7 @@ export interface Layout {
     | "Variation 2"
     | "Variation 3"
     | "Variation 4"
-    | "Variation 5";
+    | "Variation 6";
   hide?: {
     logo?: boolean;
     newsletter?: boolean;
