@@ -122,4 +122,4 @@ function BackgroundImage({ image, lcp }: { image: Banner; lcp?: boolean }) {
     );
   }
 
-  export default BackgroundImage 
+  export default BackgroundImage; 
